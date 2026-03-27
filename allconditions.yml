@@ -61,7 +61,7 @@
         run: echo "Running Ubuntu-specific step"
 
 
-  # 🔹 5. Secrets check (fixed using env mapping)
+  # 🔹 5. Secrets check (fixed using env )
   secrets-check:
     runs-on: ubuntu-latest
 

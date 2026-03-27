@@ -33,4 +33,16 @@ build:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        if: needs.detect.ou
+        if: needs.detect.outputs.app == 'dotnet'
+        run: dotnet restore
+
+      - name: Build .NET
+        if: needs.detect.outputs.app == 'dotnet'
+        run: dotnet build --configuration Release
+
+      # ❌ Fail if unknown
+      - name: Fail if unknown app
+        if: needs.detect.outputs.app == 'unknown'
+        run: |
+          echo "Unsupported project type"
+          exit 1

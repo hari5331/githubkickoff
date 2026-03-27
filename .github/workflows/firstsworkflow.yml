@@ -46,7 +46,7 @@ jobs:
   notify:
     name: Notification Job
     runs-on: ubuntu-latest
-    needs: [build, test]
+    needs: [build]
     if: always()
     steps:
       - name: Send notification

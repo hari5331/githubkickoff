@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Build job-new
+  build1:
+    name: Build job-newer
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
